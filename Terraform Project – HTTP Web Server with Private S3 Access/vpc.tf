@@ -101,3 +101,8 @@ resource "aws_vpc_endpoint" "accessing-s3-privateEC2" {
   vpc_endpoint_type = "Gateway"
   route_table_ids = [aws_route_table.private-route_table.id]
 }
+# Attach S3 VPC Endpoint to Private Route Table
+  resource "aws_vpc_endpoint_route_table_association" "s3_private_assoc" {
+  vpc_endpoint_id = aws_vpc_endpoint.accessing-s3-privateEC2.id
+  route_table_id  = aws_route_table.private-route_table.id
+}
