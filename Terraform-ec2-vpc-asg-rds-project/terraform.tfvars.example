@@ -1,0 +1,4 @@
+region = "us-east-1"
+project = "tf-demo"
+key_name = "your-keypair"
+db_password = "SuperSecretPass123!"
